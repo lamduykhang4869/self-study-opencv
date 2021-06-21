@@ -22,6 +22,8 @@ thresh = cv2.threshold(blurred, 60, 255, cv2.THRESH_BINARY)[1]
 cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 cnts = imutils.grab_contours(cnts)
 
+# print(cnts[3].shape)
+
 # loop over the contours and draw them in the input image
 for c in cnts:
     cv2.drawContours(image, [c], -1, (0, 0, 255), 2)
